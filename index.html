@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Sofia&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Sofia&display=swap"
       rel="stylesheet"
@@ -22,6 +24,35 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&family=Sofia&display=swap"
       rel="stylesheet"
     />
+    <style>
+       @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .animate-fadeInRight {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fadeInRight-active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+   
+    </style>
   </head>
   <div>
     <!-- <div class="navbar bg-base-100 shadow-lg absolute">
@@ -149,7 +180,7 @@
             Full Stuck Developer
           </h1>
           <div class="text-center max-w-sm mx-auto" id="desc">
-            <p class="p-4" style="font-family: 'Roboto'">
+            <p class="p-4 animate-fadeInUp" style="font-family: 'Roboto'">
               I am a full stack developer who always follows technological
               developments and loves anime, games, chocolate, and xiao
             </p>
@@ -216,14 +247,16 @@
           &nbsp;
         </div>
         <div class="px-3 mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="bg-accent-content p-3 h-auto md:h-52 border border-black rounded text-white" style="font-family: 'Roboto';">
+          <!-- Gambar ditempatkan terlebih dahulu untuk tampilan responsif -->
+          <img class="mx-auto animate-fadeInRight md:order-last" src="./img/xiao.gif" alt="" width="200px">
+          <div class="bg-accent-content animate-fadeInRight  p-3 h-auto md:h-52 border border-black rounded text-white" style="font-family: 'Roboto';">
             <p>Hi, my name is Ramadhany. I am someone who has a passion for IT, especially programming. I have long studied many things related to technology ranging from hardware, software, machine learning, artificial intelligence, to coding.</p>
             <br>
             <p class="py-5">Apart from that, I also like playing games, playing music, and eating sweet foods or drinks, especially chocolate.</p>
           </div>  
-          <img class="mx-auto" src="./img/xiao.gif" alt="" width="200px">
         </div>
       </section>
+      
       <section class="mb-3">
         <div class="flex items-center">
           <span class="px-3 text-black text-xl font-bold" style="font-family: 'Roboto'">
@@ -232,25 +265,53 @@
           <hr class="flex-grow border-2 border-black" />
           &nbsp;
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-            <p class="" style="font-family: 'Roboto';">Feb 2024 - Present</p>
-            <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-            <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Matahari Putra Makmur (Trilliun)</p> 
-            <p class="font-light" style="font-family: 'Roboto';">Trilliun is a company operating in the manufacturing sector that produces quality PVC and HDPE products.</p>
+       
+          <!-- Carousel container for mobile view -->
+          <div class="md:hidden ">
+            <div class="carousel">
+              <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+                <p class="font-bold">Feb 2024 - Present</p>
+                <p class="text-xl font-bold text-black">Full Stack Developer</p> 
+                <p class="text-lg font-bold text-black text-blue-600">PT. Matahari Putra Makmur (Trilliun)</p> 
+                <p class="font-light">Trilliun is a company operating in the manufacturing sector that produces quality PVC and HDPE products.</p>
+              </div>
+              <!-- Repeat for each item -->
+              <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+                <p class="" style="font-family: 'Roboto';">Jan 2022 - Present</p>
+                <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+                <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Ride Media Corporindo</p> 
+                <p class="font-light" style="font-family: 'Roboto';">Ride Media Corporindo is a company operating in the IT consulting sector.</p>
+              </div>
+              <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+                <p class="" style="font-family: 'Roboto';">Feb 2023 - Feb 2024</p>
+                <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+                <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Brantas Abipraya</p> 
+                <p class="font-light" style="font-family: 'Roboto';">PT. Brantas Abipraya is a state-owned company that operates in the construction sector.</p>
+              </div>
+            </div>
           </div>
-          <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-            <p class="" style="font-family: 'Roboto';">Jan 2022 - Present</p>
-            <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-            <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Ride Media Corporindo</p> 
-            <p class="font-light" style="font-family: 'Roboto';">Ride Media Corporindo is a company operating in the IT consulting sector.</p>
-          </div>
-          <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-            <p class="" style="font-family: 'Roboto';">Feb 2023 - Feb 2024</p>
-            <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-            <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Brantas Abipraya</p> 
-            <p class="font-light" style="font-family: 'Roboto';">PT. Brantas Abipraya is a state-owned company that operates in the construction sector.</p>
-          </div>
+          <!-- Grid container for desktop view -->
+          <div id="exp-item" class="grid grid-cols-2 gap-4">
+            <!-- Grid content -->
+            <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+              <p class="font-bold">Feb 2024 - Present</p>
+              <p class="text-xl font-bold text-black">Full Stack Developer</p> 
+              <p class="text-lg font-bold text-black text-blue-600">PT. Matahari Putra Makmur (Trilliun)</p> 
+              <p class="font-light">Trilliun is a company operating in the manufacturing sector that produces quality PVC and HDPE products.</p>
+            </div>
+            <!-- Repeat for each item -->
+            <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+              <p class="" style="font-family: 'Roboto';">Jan 2022 - Present</p>
+              <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+              <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Ride Media Corporindo</p> 
+              <p class="font-light" style="font-family: 'Roboto';">Ride Media Corporindo is a company operating in the IT consulting sector.</p>
+            </div>
+            <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+              <p class="" style="font-family: 'Roboto';">Feb 2023 - Feb 2024</p>
+              <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+              <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Brantas Abipraya</p> 
+              <p class="font-light" style="font-family: 'Roboto';">PT. Brantas Abipraya is a state-owned company that operates in the construction sector.</p>
+            </div>
         </div>
       </section>
       
@@ -309,7 +370,32 @@
     </div>
   </body>
 </html>
+
+<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+    <p class="" style="font-family: 'Roboto';">Feb 2024 - Present</p>
+    <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+    <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Matahari Putra Makmur (Trilliun)</p> 
+    <p class="font-light" style="font-family: 'Roboto';">Trilliun is a company operating in the manufacturing sector that produces quality PVC and HDPE products.</p>
+  </div>
+  <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+    <p class="" style="font-family: 'Roboto';">Jan 2022 - Present</p>
+    <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+    <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Ride Media Corporindo</p> 
+    <p class="font-light" style="font-family: 'Roboto';">Ride Media Corporindo is a company operating in the IT consulting sector.</p>
+  </div>
+  <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
+    <p class="" style="font-family: 'Roboto';">Feb 2023 - Feb 2024</p>
+    <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
+    <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Brantas Abipraya</p> 
+    <p class="font-light" style="font-family: 'Roboto';">PT. Brantas Abipraya is a state-owned company that operates in the construction sector.</p>
+  </div>
+</div> -->
+
+
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // open
@@ -349,6 +435,8 @@
             });
         }
     }
+
+    
 });
 
   // Teks yang akan diinisialisasi
@@ -371,6 +459,52 @@
 
   // Memanggil fungsi untuk menampilkan efek mengetik
   typeWriter(text, 0);
+
+
+  $(document).ready(function(){
+
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function handleScroll() {
+      var elements = document.querySelectorAll('.animate-fadeInRight');
+      elements.forEach(function(el) {
+        if (isElementInViewport(el)) {
+          el.classList.add('fadeInRight-active');
+        }
+      });
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Event listener for scroll
+    window.addEventListener('scroll', handleScroll);
+
+    $('.carousel').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      dots: true,
+      arrows: true,
+      infinite: true,
+    });
+
+    const screenWidth = window.innerWidth;
+if (screenWidth >= 800) {
+  $('#exp-item').show();
+} else {
+  $('#exp-item').hide();
+}
+    
+  });
 
 </script>
 
