@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Ramadhany Pramestha</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
       rel="stylesheet"
@@ -14,8 +15,14 @@
       href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Sofia&display=swap"
       rel="stylesheet"
     />
-    <link href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Sofia&display=swap"
       rel="stylesheet"
@@ -25,51 +32,53 @@
       rel="stylesheet"
     />
     <style>
-       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-       }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-       @keyframes fadeInUp {
-      from {
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 2s ease-out;
+      }
+
+      .animate-fadeInRight {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
       }
-      to {
+
+      .fadeInRight-active {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
       }
-    }
 
-    .animate-fadeInUp {
-      animation: fadeInUp 2s ease-out;
-    }
-
-    .animate-fadeInRight {
-      opacity: 0;
-      transform: translateX(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .fadeInRight-active {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white; /* Ubah nilai alpha untuk transparansi */
-      z-index: 50; /* Atur z-index untuk memastikan lapisan di atas elemen lain */
-    }
-
-   
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white; /* Ubah nilai alpha untuk transparansi */
+        z-index: 50; /* Atur z-index untuk memastikan lapisan di atas elemen lain */
+      }
     </style>
   </head>
-  <div>
+  <body>
     <!-- <div class="navbar bg-base-100 shadow-lg absolute">
       <div class="flex-1">
         <a class="btn btn-ghost text-xl" style="font-family: 'Roboto'"
@@ -90,85 +99,201 @@
       </div>
     </div> -->
     <div class="overlay"></div>
-    <div id="preloader" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-light opacity-75 z-50">
+    <div
+      id="preloader"
+      class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-light opacity-75 z-50"
+    >
       <span class="loading loading-ring loading-lg text-primary"></span>
     </div>
     <div id="content" hidden>
-      <nav class="relative px-4 py-4 flex justify-between items-center bg-white shadow-lg">
+      <nav
+        class="relative px-4 py-4 flex justify-between items-center bg-white shadow-lg"
+      >
         <a class="btn btn-ghost text-xl" style="font-family: 'Roboto'"
-            >Dhanyrpebs</a
-          >
+          >Dhanyrpebs</a
+        >
         <div class="lg:hidden">
           <button class="navbar-burger flex items-center text-blue-600 p-3">
-            <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="block h-4 w-4 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <title>Mobile menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
           </button>
         </div>
-        <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6"
-        style="font-family: 'Saira'"
+        <ul
+          class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6"
+          style="font-family: 'Saira'"
         >
-          <li><a class="text-lg text-black font-semibold hover:text-gray-500" href="#">Home</a></li>
+          <li>
+            <a
+              class="text-lg text-black font-semibold hover:text-gray-500"
+              href="#"
+              >Home</a
+            >
+          </li>
           <li class="text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              class="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
             </svg>
           </li>
-          <li><a class="text-lg text-black font-semibold" href="#">About Me</a></li>
+          <li>
+            <a class="text-lg text-black font-semibold" href="#">About Me</a>
+          </li>
           <li class="text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              class="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
             </svg>
           </li>
-          <li><a class="text-lg text-black font-semibold hover:text-gray-500" href="#">Experiences</a></li>
+          <li>
+            <a
+              class="text-lg text-black font-semibold hover:text-gray-500"
+              href="#"
+              >Experiences</a
+            >
+          </li>
           <li class="text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              class="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
             </svg>
           </li>
-          <li><a class="text-lg text-black font-semibold hover:text-gray-500" href="#">Skills</a></li>
+          <li>
+            <a
+              class="text-lg text-black font-semibold hover:text-gray-500"
+              href="#"
+              >Skills</a
+            >
+          </li>
           <li class="text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              class="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
             </svg>
           </li>
-          <li><a class="text-lg text-black font-semibold hover:text-gray-500" href="#">Project</a></li>
+          <li>
+            <a
+              class="text-lg text-black font-semibold hover:text-gray-500"
+              href="#"
+              >Project</a
+            >
+          </li>
         </ul>
         <!-- <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
         <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Sign up</a> -->
       </nav>
       <div class="navbar-menu relative z-50 hidden">
         <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-        <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+        <nav
+          class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+        >
           <div class="flex items-center mb-8">
             <a class="mr-auto text-3xl font-bold leading-none" href="#">
               <svg class="h-12" alt="logo" viewBox="0 0 10240 10240">
-                    <path xmlns="http://www.w3.org/2000/svg" d="M8284 9162 c-2 -207 -55 -427 -161 -667 -147 -333 -404 -644 -733 -886 -81 -59 -247 -169 -256 -169 -3 0 -18 -9 -34 -20 -26 -19 -344 -180 -354 -180 -3 0 -29 -11 -58 -24 -227 -101 -642 -225 -973 -290 -125 -25 -397 -70 -480 -80 -22 -3 -76 -9 -120 -15 -100 -13 -142 -17 -357 -36 -29 -2 -98 -7 -153 -10 -267 -15 -436 -28 -525 -40 -14 -2 -45 -7 -70 -10 -59 -8 -99 -14 -130 -20 -14 -3 -41 -7 -60 -11 -19 -3 -39 -7 -45 -8 -5 -2 -28 -6 -50 -10 -234 -45 -617 -165 -822 -257 -23 -10 -45 -19 -48 -19 -7 0 -284 -138 -340 -170 -631 -355 -1107 -842 -1402 -1432 -159 -320 -251 -633 -308 -1056 -26 -190 -27 -635 -1 -832 3 -19 7 -59 10 -89 4 -30 11 -84 17 -120 6 -36 12 -77 14 -91 7 -43 33 -174 39 -190 3 -8 7 -28 9 -45 6 -35 52 -221 72 -285 7 -25 23 -79 35 -120 29 -99 118 -283 189 -389 67 -103 203 -244 286 -298 75 -49 178 -103 196 -103 16 0 27 16 77 110 124 231 304 529 485 800 82 124 153 227 157 230 3 3 28 36 54 74 116 167 384 497 546 671 148 160 448 450 560 542 14 12 54 45 90 75 88 73 219 172 313 238 42 29 77 57 77 62 0 5 -13 34 -29 66 -69 137 -149 405 -181 602 -7 41 -14 82 -15 90 -1 8 -6 46 -10 83 -3 37 -8 77 -10 88 -2 11 -7 65 -11 122 -3 56 -8 104 -9 107 -2 3 0 12 5 19 6 10 10 8 15 -10 10 -34 167 -346 228 -454 118 -210 319 -515 340 -515 4 0 40 18 80 40 230 128 521 255 787 343 118 40 336 102 395 113 28 5 53 11 105 23 25 5 59 12 75 15 17 3 41 8 55 11 34 7 274 43 335 50 152 18 372 29 565 29 194 0 481 -11 489 -19 2 -3 -3 -6 -12 -6 -9 -1 -20 -2 -24 -3 -33 -8 -73 -16 -98 -21 -61 -10 -264 -56 -390 -90 -649 -170 -1243 -437 -1770 -794 -60 -41 -121 -82 -134 -93 l-24 -18 124 -59 c109 -52 282 -116 404 -149 92 -26 192 -51 220 -55 17 -3 64 -12 105 -21 71 -14 151 -28 230 -41 19 -3 46 -7 60 -10 14 -2 45 -7 70 -10 25 -4 56 -8 70 -10 14 -2 53 -7 88 -10 35 -4 71 -8 81 -10 10 -2 51 -6 92 -9 101 -9 141 -14 147 -21 3 -3 -15 -5 -39 -6 -24 0 -52 -2 -62 -4 -21 -4 -139 -12 -307 -22 -242 -14 -700 -7 -880 13 -41 4 -187 27 -250 39 -125 23 -274 68 -373 111 -43 19 -81 34 -86 34 -4 0 -16 -8 -27 -17 -10 -10 -37 -33 -59 -52 -166 -141 -422 -395 -592 -586 -228 -257 -536 -672 -688 -925 -21 -36 -43 -66 -47 -68 -4 -2 -8 -7 -8 -11 0 -5 -24 -48 -54 -97 -156 -261 -493 -915 -480 -935 2 -3 47 -21 101 -38 54 -18 107 -36 118 -41 58 -25 458 -138 640 -181 118 -27 126 -29 155 -35 14 -2 45 -9 70 -14 66 -15 137 -28 300 -55 37 -7 248 -33 305 -39 28 -3 84 -9 125 -13 163 -16 792 -8 913 12 12 2 58 9 102 15 248 35 423 76 665 157 58 19 134 46 170 60 86 33 344 156 348 166 2 4 8 7 13 7 14 0 205 116 303 184 180 126 287 216 466 396 282 281 511 593 775 1055 43 75 178 347 225 455 100 227 236 602 286 790 59 220 95 364 120 485 6 28 45 245 50 275 2 14 7 41 10 60 3 19 8 49 10 65 2 17 6 46 9 65 15 100 35 262 40 335 3 39 8 89 10 112 22 225 33 803 21 1043 -3 41 -7 129 -11 195 -3 66 -8 136 -10 155 -2 19 -6 76 -10 125 -3 50 -8 101 -10 115 -2 14 -6 57 -10 95 -7 72 -12 113 -20 175 -2 19 -7 55 -10 80 -6 46 -43 295 -51 340 -2 14 -9 54 -15 90 -5 36 -16 97 -24 135 -8 39 -17 84 -20 100 -12 68 -18 97 -50 248 -19 87 -47 204 -61 260 -14 56 -27 109 -29 117 -30 147 -232 810 -253 832 -4 4 -7 -23 -8 -60z"></path>
-                  </svg>
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="M8284 9162 c-2 -207 -55 -427 -161 -667 -147 -333 -404 -644 -733 -886 -81 -59 -247 -169 -256 -169 -3 0 -18 -9 -34 -20 -26 -19 -344 -180 -354 -180 -3 0 -29 -11 -58 -24 -227 -101 -642 -225 -973 -290 -125 -25 -397 -70 -480 -80 -22 -3 -76 -9 -120 -15 -100 -13 -142 -17 -357 -36 -29 -2 -98 -7 -153 -10 -267 -15 -436 -28 -525 -40 -14 -2 -45 -7 -70 -10 -59 -8 -99 -14 -130 -20 -14 -3 -41 -7 -60 -11 -19 -3 -39 -7 -45 -8 -5 -2 -28 -6 -50 -10 -234 -45 -617 -165 -822 -257 -23 -10 -45 -19 -48 -19 -7 0 -284 -138 -340 -170 -631 -355 -1107 -842 -1402 -1432 -159 -320 -251 -633 -308 -1056 -26 -190 -27 -635 -1 -832 3 -19 7 -59 10 -89 4 -30 11 -84 17 -120 6 -36 12 -77 14 -91 7 -43 33 -174 39 -190 3 -8 7 -28 9 -45 6 -35 52 -221 72 -285 7 -25 23 -79 35 -120 29 -99 118 -283 189 -389 67 -103 203 -244 286 -298 75 -49 178 -103 196 -103 16 0 27 16 77 110 124 231 304 529 485 800 82 124 153 227 157 230 3 3 28 36 54 74 116 167 384 497 546 671 148 160 448 450 560 542 14 12 54 45 90 75 88 73 219 172 313 238 42 29 77 57 77 62 0 5 -13 34 -29 66 -69 137 -149 405 -181 602 -7 41 -14 82 -15 90 -1 8 -6 46 -10 83 -3 37 -8 77 -10 88 -2 11 -7 65 -11 122 -3 56 -8 104 -9 107 -2 3 0 12 5 19 6 10 10 8 15 -10 10 -34 167 -346 228 -454 118 -210 319 -515 340 -515 4 0 40 18 80 40 230 128 521 255 787 343 118 40 336 102 395 113 28 5 53 11 105 23 25 5 59 12 75 15 17 3 41 8 55 11 34 7 274 43 335 50 152 18 372 29 565 29 194 0 481 -11 489 -19 2 -3 -3 -6 -12 -6 -9 -1 -20 -2 -24 -3 -33 -8 -73 -16 -98 -21 -61 -10 -264 -56 -390 -90 -649 -170 -1243 -437 -1770 -794 -60 -41 -121 -82 -134 -93 l-24 -18 124 -59 c109 -52 282 -116 404 -149 92 -26 192 -51 220 -55 17 -3 64 -12 105 -21 71 -14 151 -28 230 -41 19 -3 46 -7 60 -10 14 -2 45 -7 70 -10 25 -4 56 -8 70 -10 14 -2 53 -7 88 -10 35 -4 71 -8 81 -10 10 -2 51 -6 92 -9 101 -9 141 -14 147 -21 3 -3 -15 -5 -39 -6 -24 0 -52 -2 -62 -4 -21 -4 -139 -12 -307 -22 -242 -14 -700 -7 -880 13 -41 4 -187 27 -250 39 -125 23 -274 68 -373 111 -43 19 -81 34 -86 34 -4 0 -16 -8 -27 -17 -10 -10 -37 -33 -59 -52 -166 -141 -422 -395 -592 -586 -228 -257 -536 -672 -688 -925 -21 -36 -43 -66 -47 -68 -4 -2 -8 -7 -8 -11 0 -5 -24 -48 -54 -97 -156 -261 -493 -915 -480 -935 2 -3 47 -21 101 -38 54 -18 107 -36 118 -41 58 -25 458 -138 640 -181 118 -27 126 -29 155 -35 14 -2 45 -9 70 -14 66 -15 137 -28 300 -55 37 -7 248 -33 305 -39 28 -3 84 -9 125 -13 163 -16 792 -8 913 12 12 2 58 9 102 15 248 35 423 76 665 157 58 19 134 46 170 60 86 33 344 156 348 166 2 4 8 7 13 7 14 0 205 116 303 184 180 126 287 216 466 396 282 281 511 593 775 1055 43 75 178 347 225 455 100 227 236 602 286 790 59 220 95 364 120 485 6 28 45 245 50 275 2 14 7 41 10 60 3 19 8 49 10 65 2 17 6 46 9 65 15 100 35 262 40 335 3 39 8 89 10 112 22 225 33 803 21 1043 -3 41 -7 129 -11 195 -3 66 -8 136 -10 155 -2 19 -6 76 -10 125 -3 50 -8 101 -10 115 -2 14 -6 57 -10 95 -7 72 -12 113 -20 175 -2 19 -7 55 -10 80 -6 46 -43 295 -51 340 -2 14 -9 54 -15 90 -5 36 -16 97 -24 135 -8 39 -17 84 -20 100 -12 68 -18 97 -50 248 -19 87 -47 204 -61 260 -14 56 -27 109 -29 117 -30 147 -232 810 -253 832 -4 4 -7 -23 -8 -60z"
+                ></path>
+              </svg>
             </a>
             <button class="navbar-close">
-              <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              <svg
+                class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
               </svg>
             </button>
           </div>
           <div>
             <ul>
               <li class="mb-1">
-                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Home</a>
+                <a
+                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                  href="#"
+                  >Home</a
+                >
               </li>
               <li class="mb-1">
-                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">About Me</a>
+                <a
+                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                  href="#"
+                  >About Me</a
+                >
               </li>
               <li class="mb-1">
-                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Experiences</a>
+                <a
+                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                  href="#"
+                  >Experiences</a
+                >
               </li>
               <li class="mb-1">
-                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Skills</a>
+                <a
+                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                  href="#"
+                  >Skills</a
+                >
               </li>
               <li class="mb-1">
-                <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Project</a>
+                <a
+                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                  href="#"
+                  >Project</a
+                >
               </li>
             </ul>
           </div>
@@ -182,85 +307,88 @@
             </p>
           </div> -->
         </nav>
-        </div>
       </div>
-      <div class="hero min-h-screen bg-base-100">
-        <div class="hero-content">
-          <div class="text-center">
-            <p
-              class="font-semibold text-xl"
-              style="font-family: 'Roboto'; color: black"
-            >
-              Hello I'm <span style="color: #003a7e" id="typing-text"></span>
+    </div>
+    <div class="hero min-h-screen bg-base-100">
+      <div class="hero-content">
+        <div class="text-center">
+          <p
+            class="font-semibold text-xl"
+            style="font-family: 'Roboto'; color: black"
+          >
+            Hello I'm <span style="color: #003a7e" id="typing-text"></span>
+          </p>
+          <h1
+            class="text-6xl font-bold p-6 text-black"
+            style="font-family: 'sen'"
+          >
+            Full Stuck Developer
+          </h1>
+          <div class="text-center max-w-sm mx-auto" id="desc">
+            <p class="p-4 animate-fadeInUp" style="font-family: 'Roboto'">
+              I am a full stack developer who always follows technological
+              developments and loves anime, games, chocolate, and xiao
             </p>
-            <h1
-              class="text-6xl font-bold p-6 text-black"
-              style="font-family: 'sen'"
+          </div>
+          <div
+            class="text-center max-w-sm mx-auto flex justify-center gap-4"
+            id="icon"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
             >
-              Full Stuck Developer
-            </h1>
-            <div class="text-center max-w-sm mx-auto" id="desc">
-              <p class="p-4 animate-fadeInUp" style="font-family: 'Roboto'">
-                I am a full stack developer who always follows technological
-                developments and loves anime, games, chocolate, and xiao
-              </p>
-            </div>
-            <div
-              class="text-center max-w-sm mx-auto flex justify-center gap-4"
-              id="icon"
+              <path
+                fill="currentColor"
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
-                />
-              </svg>
-            </div>
+              <path
+                fill="currentColor"
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+              />
+            </svg>
           </div>
         </div>
       </div>
-      <div class="container mx-auto px-8">
+    </div>
+    <div class="container mx-auto px-8">
       <section class="mb-3">
         <div class="flex items-center">
-          <span class="px-3 text-black text-xl font-bold" style="font-family: 'Roboto'">
+          <span
+            class="px-3 text-black text-xl font-bold"
+            style="font-family: 'Roboto'"
+          >
             < About Me />
           </span>
           <hr class="flex-grow border-2 border-black" />
@@ -268,203 +396,576 @@
         </div>
         <div class="px-3 mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Gambar ditempatkan terlebih dahulu untuk tampilan responsif -->
-          <img class="mx-auto animate-fadeInRight md:order-last" src="./img/xiao.gif" alt="" width="200px">
-          <div class="bg-accent-content animate-fadeInRight  p-3 h-auto md:h-52 border border-black rounded text-white" style="font-family: 'Roboto';">
-            <p>Hi, my name is Ramadhany. I am someone who has a passion for IT, especially programming. I have long studied many things related to technology ranging from hardware, software, machine learning, artificial intelligence, to coding.</p>
-            <br>
-            <p class="py-5">Apart from that, I also like playing games, playing music, and eating sweet foods or drinks, especially chocolate.</p>
-          </div>  
+          <img
+            class="mx-auto animate-fadeInRight md:order-last"
+            src="./img/xiao.gif"
+            alt=""
+            width="200px"
+          />
+          <div
+            class="bg-accent-content animate-fadeInRight p-3 h-auto md:h-52 border border-black rounded text-white"
+            style="font-family: 'Roboto'"
+          >
+            <p>
+              Hi, my name is Ramadhany. I am someone who has a passion for IT,
+              especially programming. I have long studied many things related to
+              technology ranging from hardware, software, machine learning,
+              artificial intelligence, to coding.
+            </p>
+            <br />
+            <p class="py-5">
+              Apart from that, I also like playing games, playing music, and
+              eating sweet foods or drinks, especially chocolate.
+            </p>
+          </div>
         </div>
       </section>
-      
+
       <section class="mb-3">
         <div class="flex items-center">
-          <span class="px-3 text-black text-xl font-bold" style="font-family: 'Roboto'">
+          <span
+            class="px-3 text-black text-xl font-bold"
+            style="font-family: 'Roboto'"
+          >
             < Experience />
           </span>
           <hr class="flex-grow border-2 border-black" />
           &nbsp;
         </div>
-       
-          <!-- Carousel container for mobile view -->
-          <div class="md:hidden ">
-            <div class="carousel">
-              <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-                <p class="font-bold">Feb 2024 - Present</p>
-                <p class="text-xl font-bold text-black">Full Stack Developer</p> 
-                <p class="text-lg font-bold text-black text-blue-600">PT. Matahari Putra Makmur (Trilliun)</p> 
-                <p class="font-light">Trilliun is a company operating in the manufacturing sector that produces quality PVC and HDPE products.</p>
-              </div>
-              <!-- Repeat for each item -->
-              <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-                <p class="" style="font-family: 'Roboto';">Jan 2022 - Present</p>
-                <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-                <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Ride Media Corporindo</p> 
-                <p class="font-light" style="font-family: 'Roboto';">Ride Media Corporindo is a company operating in the IT consulting sector.</p>
-              </div>
-              <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-                <p class="" style="font-family: 'Roboto';">Feb 2023 - Feb 2024</p>
-                <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-                <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Brantas Abipraya</p> 
-                <p class="font-light" style="font-family: 'Roboto';">PT. Brantas Abipraya is a state-owned company that operates in the construction sector.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Grid container for desktop view -->
-          <div id="exp-item" class="grid grid-cols-2 gap-4">
-            <!-- Grid content -->
-            <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-              <p class="" style="font-family: 'Roboto';">Feb 2024 - Present</p>
-              <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-              <p class="text-lg font-extrabold" style="font-family: 'Roboto'; color: #003a7e">PT. Matahari Putra Makmur (Trilliun)</p> 
-              <p class="font-light">Trilliun is a company operating in the manufacturing sector that produces quality PVC and HDPE products.</p>
+
+        <!-- Carousel container for mobile view -->
+        <div class="md:hidden">
+          <div class="carousel">
+            <div
+              class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
+            >
+              <p class="font-bold">Feb 2024 - Present</p>
+              <p class="text-xl font-bold text-black">Full Stack Developer</p>
+              <p class="text-lg font-bold text-black text-blue-600">
+                PT. Matahari Putra Makmur (Trilliun)
+              </p>
+              <p class="font-light">
+                Trilliun is a company operating in the manufacturing sector that
+                produces quality PVC and HDPE products.
+              </p>
             </div>
             <!-- Repeat for each item -->
-            <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-              <p class="" style="font-family: 'Roboto';">Jan 2022 - Present</p>
-              <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-              <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Ride Media Corporindo</p> 
-              <p class="font-light" style="font-family: 'Roboto';">Ride Media Corporindo is a company operating in the IT consulting sector.</p>
+            <div
+              class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
+            >
+              <p class="" style="font-family: 'Roboto'">Jan 2022 - Present</p>
+              <p
+                class="text-3xl font-extrabold text-black"
+                style="font-family: 'Roboto'"
+              >
+                Full Stack Developer
+              </p>
+              <p
+                class="text-lg font-extrabold text-black"
+                style="font-family: 'Roboto'; color: #003a7e"
+              >
+                PT. Ride Media Corporindo
+              </p>
+              <p class="font-light" style="font-family: 'Roboto'">
+                Ride Media Corporindo is a company operating in the IT
+                consulting sector.
+              </p>
             </div>
-            <div class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg">
-              <p class="" style="font-family: 'Roboto';">Feb 2023 - Feb 2024</p>
-              <p class="text-3xl font-extrabold text-black" style="font-family: 'Roboto';">Full Stack Developer</p> 
-              <p class="text-lg font-extrabold text-black" style="font-family: 'Roboto'; color: #003a7e">PT. Brantas Abipraya</p> 
-              <p class="font-light" style="font-family: 'Roboto';">PT. Brantas Abipraya is a state-owned company that operates in the construction sector.</p>
+            <div
+              class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
+            >
+              <p class="" style="font-family: 'Roboto'">Feb 2023 - Feb 2024</p>
+              <p
+                class="text-3xl font-extrabold text-black"
+                style="font-family: 'Roboto'"
+              >
+                Full Stack Developer
+              </p>
+              <p
+                class="text-lg font-extrabold text-black"
+                style="font-family: 'Roboto'; color: #003a7e"
+              >
+                PT. Brantas Abipraya
+              </p>
+              <p class="font-light" style="font-family: 'Roboto'">
+                PT. Brantas Abipraya is a state-owned company that operates in
+                the construction sector.
+              </p>
             </div>
+          </div>
+        </div>
+        <!-- Grid container for desktop view -->
+        <div id="exp-item" class="grid grid-cols-2 gap-4">
+          <!-- Grid content -->
+          <div
+            class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
+          >
+            <p class="" style="font-family: 'Roboto'">Feb 2024 - Present</p>
+            <p
+              class="text-3xl font-extrabold text-black"
+              style="font-family: 'Roboto'"
+            >
+              Full Stack Developer
+            </p>
+            <p
+              class="text-lg font-extrabold"
+              style="font-family: 'Roboto'; color: #003a7e"
+            >
+              PT. Matahari Putra Makmur (Trilliun)
+            </p>
+            <p class="font-light">
+              Trilliun is a company operating in the manufacturing sector that
+              produces quality PVC and HDPE products.
+            </p>
+          </div>
+          <!-- Repeat for each item -->
+          <div
+            class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
+          >
+            <p class="" style="font-family: 'Roboto'">Jan 2022 - Present</p>
+            <p
+              class="text-3xl font-extrabold text-black"
+              style="font-family: 'Roboto'"
+            >
+              Full Stack Developer
+            </p>
+            <p
+              class="text-lg font-extrabold text-black"
+              style="font-family: 'Roboto'; color: #003a7e"
+            >
+              PT. Ride Media Corporindo
+            </p>
+            <p class="font-light" style="font-family: 'Roboto'">
+              Ride Media Corporindo is a company operating in the IT consulting
+              sector.
+            </p>
+          </div>
+          <div
+            class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
+          >
+            <p class="" style="font-family: 'Roboto'">Feb 2023 - Feb 2024</p>
+            <p
+              class="text-3xl font-extrabold text-black"
+              style="font-family: 'Roboto'"
+            >
+              Full Stack Developer
+            </p>
+            <p
+              class="text-lg font-extrabold text-black"
+              style="font-family: 'Roboto'; color: #003a7e"
+            >
+              PT. Brantas Abipraya
+            </p>
+            <p class="font-light" style="font-family: 'Roboto'">
+              PT. Brantas Abipraya is a state-owned company that operates in the
+              construction sector.
+            </p>
+          </div>
         </div>
       </section>
-      
+
       <section class="mb-3">
         <div class="flex items-center">
-          <span class="px-3 text-black text-xl font-bold" style="font-family: 'Roboto'">
+          <span
+            class="px-3 text-black text-xl font-bold"
+            style="font-family: 'Roboto'"
+          >
             < Skills />
           </span>
           <hr class="flex-grow border-2 border-black" />
           &nbsp;
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-4/5 justify-items-center mx-auto">
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-4/5 justify-items-center mx-auto"
+        >
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="10em" height="10em" viewBox="0 0 256 135"><defs><radialGradient id="logosPhp0" cx=".837" cy="-125.811" r="363.057" gradientTransform="translate(76.464 81.918)scale(.463)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#4c6b97"/><stop offset="1" stop-color="#231f20"/></radialGradient></defs><ellipse cx="128" cy="67.3" fill="url(#logosPhp0)" rx="128" ry="67.3"/><ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3"/><path fill="#fff" d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"/><path fill="#000004" d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10em"
+              height="10em"
+              viewBox="0 0 256 135"
+            >
+              <defs>
+                <radialGradient
+                  id="logosPhp0"
+                  cx=".837"
+                  cy="-125.811"
+                  r="363.057"
+                  gradientTransform="translate(76.464 81.918)scale(.463)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#fff" />
+                  <stop offset=".5" stop-color="#4c6b97" />
+                  <stop offset="1" stop-color="#231f20" />
+                </radialGradient>
+              </defs>
+              <ellipse
+                cx="128"
+                cy="67.3"
+                fill="url(#logosPhp0)"
+                rx="128"
+                ry="67.3"
+              />
+              <ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3" />
+              <path
+                fill="#fff"
+                d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"
+              />
+              <path
+                fill="#000004"
+                d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 256 255"><defs><linearGradient id="logosPython0" x1="12.959%" x2="79.639%" y1="12.039%" y2="78.201%"><stop offset="0%" stop-color="#387eb8"/><stop offset="100%" stop-color="#366994"/></linearGradient><linearGradient id="logosPython1" x1="19.128%" x2="90.742%" y1="20.579%" y2="88.429%"><stop offset="0%" stop-color="#ffe052"/><stop offset="100%" stop-color="#ffc331"/></linearGradient></defs><path fill="url(#logosPython0)" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072M92.802 19.66a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.13"/><path fill="url(#logosPython1)" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897m34.114-19.586a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.131a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="7em"
+              height="7em"
+              viewBox="0 0 256 255"
+            >
+              <defs>
+                <linearGradient
+                  id="logosPython0"
+                  x1="12.959%"
+                  x2="79.639%"
+                  y1="12.039%"
+                  y2="78.201%"
+                >
+                  <stop offset="0%" stop-color="#387eb8" />
+                  <stop offset="100%" stop-color="#366994" />
+                </linearGradient>
+                <linearGradient
+                  id="logosPython1"
+                  x1="19.128%"
+                  x2="90.742%"
+                  y1="20.579%"
+                  y2="88.429%"
+                >
+                  <stop offset="0%" stop-color="#ffe052" />
+                  <stop offset="100%" stop-color="#ffc331" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#logosPython0)"
+                d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072M92.802 19.66a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.13"
+              />
+              <path
+                fill="url(#logosPython1)"
+                d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897m34.114-19.586a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.131a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="7em" height="7em" viewBox="0 0 256 256"><path fill="#f7df1e" d="M0 0h256v256H0z"/><path d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="7em"
+              height="7em"
+              viewBox="0 0 256 256"
+            >
+              <path fill="#f7df1e" d="M0 0h256v256H0z" />
+              <path
+                d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="6em" viewBox="0 0 256 317"><defs><linearGradient id="logosFlutter0" x1="3.952%" x2="75.897%" y1="26.993%" y2="52.919%"><stop offset="0%"/><stop offset="100%" stop-opacity="0"/></linearGradient></defs><path fill="#47c5fb" d="M157.666.001L.001 157.666l48.8 48.8L255.268.001zm-1.099 145.396l-84.418 84.418l48.984 49.716l48.71-48.71l85.425-85.424z"/><path fill="#00569e" d="m121.133 279.531l37.082 37.082h97.052l-85.425-85.792z"/><path fill="#00b5f8" d="m71.6 230.364l48.801-48.801l49.441 49.258l-48.709 48.71z"/><path fill="url(#logosFlutter0)" fill-opacity="0.8" d="m121.133 279.531l40.56-13.459l4.029-31.131z"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="5em"
+              height="6em"
+              viewBox="0 0 256 317"
+            >
+              <defs>
+                <linearGradient
+                  id="logosFlutter0"
+                  x1="3.952%"
+                  x2="75.897%"
+                  y1="26.993%"
+                  y2="52.919%"
+                >
+                  <stop offset="0%" />
+                  <stop offset="100%" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="#47c5fb"
+                d="M157.666.001L.001 157.666l48.8 48.8L255.268.001zm-1.099 145.396l-84.418 84.418l48.984 49.716l48.71-48.71l85.425-85.424z"
+              />
+              <path
+                fill="#00569e"
+                d="m121.133 279.531l37.082 37.082h97.052l-85.425-85.792z"
+              />
+              <path
+                fill="#00b5f8"
+                d="m71.6 230.364l48.801-48.801l49.441 49.258l-48.709 48.71z"
+              />
+              <path
+                fill="url(#logosFlutter0)"
+                fill-opacity="0.8"
+                d="m121.133 279.531l40.56-13.459l4.029-31.131z"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="10em" height="10em" viewBox="0 0 256 135"><defs><radialGradient id="logosPhp0" cx=".837" cy="-125.811" r="363.057" gradientTransform="translate(76.464 81.918)scale(.463)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#4c6b97"/><stop offset="1" stop-color="#231f20"/></radialGradient></defs><ellipse cx="128" cy="67.3" fill="url(#logosPhp0)" rx="128" ry="67.3"/><ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3"/><path fill="#fff" d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"/><path fill="#000004" d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10em"
+              height="10em"
+              viewBox="0 0 256 135"
+            >
+              <defs>
+                <radialGradient
+                  id="logosPhp0"
+                  cx=".837"
+                  cy="-125.811"
+                  r="363.057"
+                  gradientTransform="translate(76.464 81.918)scale(.463)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#fff" />
+                  <stop offset=".5" stop-color="#4c6b97" />
+                  <stop offset="1" stop-color="#231f20" />
+                </radialGradient>
+              </defs>
+              <ellipse
+                cx="128"
+                cy="67.3"
+                fill="url(#logosPhp0)"
+                rx="128"
+                ry="67.3"
+              />
+              <ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3" />
+              <path
+                fill="#fff"
+                d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"
+              />
+              <path
+                fill="#000004"
+                d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="10em" height="10em" viewBox="0 0 256 135"><defs><radialGradient id="logosPhp0" cx=".837" cy="-125.811" r="363.057" gradientTransform="translate(76.464 81.918)scale(.463)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#4c6b97"/><stop offset="1" stop-color="#231f20"/></radialGradient></defs><ellipse cx="128" cy="67.3" fill="url(#logosPhp0)" rx="128" ry="67.3"/><ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3"/><path fill="#fff" d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"/><path fill="#000004" d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10em"
+              height="10em"
+              viewBox="0 0 256 135"
+            >
+              <defs>
+                <radialGradient
+                  id="logosPhp0"
+                  cx=".837"
+                  cy="-125.811"
+                  r="363.057"
+                  gradientTransform="translate(76.464 81.918)scale(.463)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#fff" />
+                  <stop offset=".5" stop-color="#4c6b97" />
+                  <stop offset="1" stop-color="#231f20" />
+                </radialGradient>
+              </defs>
+              <ellipse
+                cx="128"
+                cy="67.3"
+                fill="url(#logosPhp0)"
+                rx="128"
+                ry="67.3"
+              />
+              <ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3" />
+              <path
+                fill="#fff"
+                d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"
+              />
+              <path
+                fill="#000004"
+                d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="10em" height="10em" viewBox="0 0 256 135"><defs><radialGradient id="logosPhp0" cx=".837" cy="-125.811" r="363.057" gradientTransform="translate(76.464 81.918)scale(.463)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#4c6b97"/><stop offset="1" stop-color="#231f20"/></radialGradient></defs><ellipse cx="128" cy="67.3" fill="url(#logosPhp0)" rx="128" ry="67.3"/><ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3"/><path fill="#fff" d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"/><path fill="#000004" d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"/></svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10em"
+              height="10em"
+              viewBox="0 0 256 135"
+            >
+              <defs>
+                <radialGradient
+                  id="logosPhp0"
+                  cx=".837"
+                  cy="-125.811"
+                  r="363.057"
+                  gradientTransform="translate(76.464 81.918)scale(.463)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#fff" />
+                  <stop offset=".5" stop-color="#4c6b97" />
+                  <stop offset="1" stop-color="#231f20" />
+                </radialGradient>
+              </defs>
+              <ellipse
+                cx="128"
+                cy="67.3"
+                fill="url(#logosPhp0)"
+                rx="128"
+                ry="67.3"
+              />
+              <ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3" />
+              <path
+                fill="#fff"
+                d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"
+              />
+              <path
+                fill="#000004"
+                d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"
+              />
+            </svg>
           </div>
-          <div class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl">
+          <div
+            class="px-3 w-48 shadow-xl border-2 border-gray-200 rounded flex justify-center items-center hover:shadow-2xl"
+          >
             <!-- Isi dengan konten keterampilan -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="10em" height="10em" viewBox="0 0 256 135"><defs><radialGradient id="logosPhp0" cx=".837" cy="-125.811" r="363.057" gradientTransform="translate(76.464 81.918)scale(.463)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#4c6b97"/><stop offset="1" stop-color="#231f20"/></radialGradient></defs><ellipse cx="128" cy="67.3" fill="url(#logosPhp0)" rx="128" ry="67.3"/><ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3"/><path fill="#fff" d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"/><path fill="#000004" d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"/></svg> 
-
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10em"
+              height="10em"
+              viewBox="0 0 256 135"
+            >
+              <defs>
+                <radialGradient
+                  id="logosPhp0"
+                  cx=".837"
+                  cy="-125.811"
+                  r="363.057"
+                  gradientTransform="translate(76.464 81.918)scale(.463)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#fff" />
+                  <stop offset=".5" stop-color="#4c6b97" />
+                  <stop offset="1" stop-color="#231f20" />
+                </radialGradient>
+              </defs>
+              <ellipse
+                cx="128"
+                cy="67.3"
+                fill="url(#logosPhp0)"
+                rx="128"
+                ry="67.3"
+              />
+              <ellipse cx="128" cy="67.3" fill="#6181b6" rx="123" ry="62.3" />
+              <path
+                fill="#fff"
+                d="m152.9 87.5l6.1-31.4c1.4-7.1.2-12.4-3.4-15.7c-3.5-3.2-9.5-4.8-18.3-4.8h-10.6l3-15.6c.1-.6 0-1.2-.4-1.7s-.9-.7-1.5-.7h-14.6c-1 0-1.8.7-2 1.6l-6.5 33.3c-.6-3.8-2-7-4.4-9.6c-4.3-4.9-11-7.4-20.1-7.4H52.1c-1 0-1.8.7-2 1.6L37 104.7c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.5-2.3 4.6-4.9 6.2-7.7l-2.6 13.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.6c1 0 1.8-.7 2-1.6l7.2-37h10c4.3 0 5.5.8 5.9 1.2c.3.3.9 1.5.2 5.2L134.1 87c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h15c.9-.3 1.7-1 1.9-1.9m-67.6-26c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.3 1.6 1.6 4.7.8 8.9m130-18.6c-4.3-4.9-11-7.4-20.1-7.4h-28.3c-1 0-1.8.7-2 1.6l-13.1 67.5c-.1.6 0 1.2.4 1.7s.9.7 1.5.7h14.7c1 0 1.8-.7 2-1.6l3.2-16.3h10.9c5.7 0 10.6-.6 14.3-1.8c3.9-1.3 7.4-3.4 10.5-6.3c2.6-2.4 4.8-5.1 6.4-8c1.6-2.9 2.8-6.1 3.5-9.6c1.7-8.7.4-15.5-3.9-20.5M200 61.5c-.9 4.7-2.6 8.1-5.1 10c-2.5 1.9-6.6 2.9-12 2.9h-6.5l4.7-24.2h8.4c6.2 0 8.7 1.3 9.7 2.4c1.4 1.6 1.7 4.7.8 8.9"
+              />
+              <path
+                fill="#000004"
+                d="M74.8 48.2c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3h-8.9l5.5-28.2zM39 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7H52.1zm74.3-85.4h14.6l-3.5 17.9h13c8.2 0 13.8 1.4 16.9 4.3c3.1 2.9 4 7.5 2.8 13.9L151 87.1h-14.8l5.8-29.9c.7-3.4.4-5.7-.7-6.9c-1.1-1.2-3.6-1.9-7.3-1.9h-11.7l-7.5 38.7h-14.6zm76.2 28.6c5.6 0 9.3 1 11.2 3.1c1.9 2.1 2.3 5.6 1.3 10.6c-1 5.2-3 9-5.9 11.2c-2.9 2.2-7.3 3.3-13.2 3.3H174l5.5-28.2zM153.7 105h14.7l3.5-17.9h12.6c5.6 0 10.1-.6 13.7-1.8c3.6-1.2 6.8-3.1 9.8-5.9c2.5-2.3 4.5-4.8 6-7.5s2.6-5.7 3.2-9c1.6-8 .4-14.2-3.5-18.7s-10.1-6.7-18.6-6.7h-28.3z"
+              />
+            </svg>
           </div>
         </div>
       </section>
       <section class="mb-3">
         <div class="flex items-center">
-          <span class="px-3 text-black text-xl font-bold" style="font-family: 'Roboto'">
+          <span
+            class="px-3 text-black text-xl font-bold"
+            style="font-family: 'Roboto'"
+          >
             < Projects />
           </span>
           <hr class="flex-grow border-2 border-black" />
           &nbsp;
         </div>
       </section>
-      
     </div>
   </body>
-</div>
 </html>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 <script>
-
   // Simulasikan waktu loading dengan setTimeout
-  setTimeout(function(){
-      document.getElementById('preloader').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
-      document.querySelector('.overlay').style.display = 'none'; // Sembunyikan overlay setelah preloader selesai
-    }, 1000);
+  setTimeout(function () {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    document.querySelector(".overlay").style.display = "none"; // Sembunyikan overlay setelah preloader selesai
+  }, 1000);
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // open
-    const burger = document.querySelectorAll('.navbar-burger');
-    const menu = document.querySelectorAll('.navbar-menu');
+    const burger = document.querySelectorAll(".navbar-burger");
+    const menu = document.querySelectorAll(".navbar-menu");
 
     if (burger.length && menu.length) {
-        for (var i = 0; i < burger.length; i++) {
-            burger[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('hidden');
-                }
-            });
-        }
+      for (var i = 0; i < burger.length; i++) {
+        burger[i].addEventListener("click", function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle("hidden");
+          }
+        });
+      }
     }
 
     // close
-    const close = document.querySelectorAll('.navbar-close');
-    const backdrop = document.querySelectorAll('.navbar-backdrop');
+    const close = document.querySelectorAll(".navbar-close");
+    const backdrop = document.querySelectorAll(".navbar-backdrop");
 
     if (close.length) {
-        for (var i = 0; i < close.length; i++) {
-            close[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('hidden');
-                }
-            });
-        }
+      for (var i = 0; i < close.length; i++) {
+        close[i].addEventListener("click", function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle("hidden");
+          }
+        });
+      }
     }
 
     if (backdrop.length) {
-        for (var i = 0; i < backdrop.length; i++) {
-            backdrop[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('hidden');
-                }
-            });
-        }
+      for (var i = 0; i < backdrop.length; i++) {
+        backdrop[i].addEventListener("click", function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle("hidden");
+          }
+        });
+      }
     }
-
-    
-});
+  });
 
   // Teks yang akan diinisialisasi
   var text = "Ramadhany Pramestha !";
   var typingSpeed = 100; // Kecepatan mengetik (dalam milidetik)
 
   // Inisialisasi teks kosong
-  document.getElementById('typing-text').textContent = '';
+  document.getElementById("typing-text").textContent = "";
 
   // Fungsi untuk menampilkan efek mengetik
   function typeWriter(text, i) {
     if (i < text.length) {
-      document.getElementById('typing-text').textContent += text.charAt(i);
+      document.getElementById("typing-text").textContent += text.charAt(i);
       i++;
       setTimeout(function () {
         typeWriter(text, i);
@@ -475,24 +976,24 @@
   // Memanggil fungsi untuk menampilkan efek mengetik
   typeWriter(text, 0);
 
-
-  $(document).ready(function(){
-
+  $(document).ready(function () {
     function isElementInViewport(el) {
       var rect = el.getBoundingClientRect();
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
       );
     }
 
     function handleScroll() {
-      var elements = document.querySelectorAll('.animate-fadeInRight');
-      elements.forEach(function(el) {
+      var elements = document.querySelectorAll(".animate-fadeInRight");
+      elements.forEach(function (el) {
         if (isElementInViewport(el)) {
-          el.classList.add('fadeInRight-active');
+          el.classList.add("fadeInRight-active");
         }
       });
     }
@@ -501,9 +1002,9 @@
     handleScroll();
 
     // Event listener for scroll
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    $('.carousel').slick({
+    $(".carousel").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
@@ -513,14 +1014,10 @@
     });
 
     const screenWidth = window.innerWidth;
-if (screenWidth >= 800) {
-  $('#exp-item').show();
-} else {
-  $('#exp-item').hide();
-}
-    
+    if (screenWidth >= 800) {
+      $("#exp-item").show();
+    } else {
+      $("#exp-item").hide();
+    }
   });
-
 </script>
-
-
