@@ -1,7 +1,7 @@
 <?php
 include 'config/db.php';
 
-$query = 'SELECT * FROM portfolio';
+$query = 'SELECT * FROM portfolio ORDER BY id DESC LIMIT 3';
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $projects =
