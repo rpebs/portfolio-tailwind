@@ -4,7 +4,7 @@ include 'config/db.php';
 $query = 'SELECT * FROM portfolio';
 $stmt = $pdo->prepare($query);
 $stmt->execute();
-$books =
+$projects =
   $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -525,6 +525,36 @@ $books =
         </span>
         <hr class="flex-grow border-2 border-black" />
         &nbsp;
+      </div>
+      <div class="container mx-auto py-8">
+        <div class="pb-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <?php foreach ($projects as $project) : ?>
+              <div class="card bg-base-100 shadow-xl border-solid border-2">
+                <figure>
+                  <img src="./img/<?= $project['image'] ?>" alt="Shoes" />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title"><?= $project['title'] ?></h2>
+                  <p>
+                    <?= $project['description'] ?>
+                  </p>
+                  <div class="card-actions justify-start">
+                    <a href="<?= $project['url'] ?>" class="btn btn-primary text-lg">Link</a>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+
+
+          
+          </div>
+          <div class="grid place-items-center">
+            <button class="btn btn-outline btn-neutral text-lg mt-10">
+              Lihat Lainnya
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   </div>

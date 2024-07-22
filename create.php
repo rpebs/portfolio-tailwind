@@ -1,8 +1,9 @@
 <?php
-include 'config/database.php';
+include 'config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
+    $url = $_POST['url'];
     $description = $_POST['description'];
     
     // Proses upload gambar
@@ -12,9 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $upload_file = $upload_dir . $image;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $upload_file)) {
-            $query = 'INSERT INTO portfolio (title, image, description) VALUES (:title, :image, :description)';
+            $query = 'INSERT INTO portfolio (title, url, image, description) VALUES (:title, :url, :image, :description)';
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(':title', $title);
+            $stmt->bindParam(':url', $url);
             $stmt->bindParam(':image', $image);
             $stmt->bindParam(':description', $description);
             $stmt->execute();
@@ -40,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post" enctype="multipart/form-data" action="">
         <label for="title">Judul:</label>
         <input type="text" name="title" id="title" required><br>
+        <label for="url">URL:</label>
+        <input type="text" name="url" id="url" required><br>
         <label for="image">Gambar:</label>
         <input type="file" name="image" id="image" accept="image/*" required><br>
         <label for="description">Deskripsi:</label>
