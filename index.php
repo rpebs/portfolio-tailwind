@@ -550,9 +550,9 @@ $projects =
           
           </div>
           <div class="grid place-items-center">
-            <button class="btn btn-outline btn-neutral text-lg mt-10">
+            <a href="./pages/more.php" class="btn btn-outline btn-neutral text-lg mt-10">
               Lihat Lainnya
-            </button>
+            </a>
           </div>
         </div>
       </div>

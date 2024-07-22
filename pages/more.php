@@ -1,5 +1,5 @@
 <?php
-include 'config/db.php';
+include '../config/db.php';
 
 $query = 'SELECT * FROM portfolio ORDER BY id DESC';
 $stmt = $pdo->prepare($query);
@@ -195,7 +195,7 @@ $projects =
                     <?php foreach ($projects as $project) : ?>
                         <div class="card bg-base-100 shadow-xl border-solid border-2">
                             <figure>
-                                <img src="./img/<?= $project['image'] ?>" alt="Shoes" />
+                                <img src="./../img/<?= $project['image'] ?>" alt="Shoes" />
                             </figure>
                             <div class="card-body">
                                 <h2 class="card-title"><?= $project['title'] ?></h2>
