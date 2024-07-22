@@ -1,8 +1,8 @@
 <?php
-$host = '185.237.145.72';
-$dbname = 'u1488987_port';
-$username = 'u1488987';
-$password = 'masmunir001';
+$host = 'localhost';
+$dbname = 'myportfolio';
+$username = 'root';
+$password = '';
 
 // Buat koneksi
 try {
