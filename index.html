@@ -97,6 +97,43 @@
         /* Atur z-index untuk memastikan lapisan di atas elemen lain */
       }
 
+      .carousel-wrapper {
+        position: relative;
+      }
+
+      .slick-dots {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex !important;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .slick-dots li {
+        margin: 0 5px;
+      }
+
+      .slick-dots li button:before {
+        font-size: 12px;
+        color: #003a7e; /* Change color of dots */
+      }
+
+      .carousel .slick-arrow {
+        color: #003a7e; /* Change color of arrows */
+        font-size: 24px;
+      }
+
+      .carousel .slick-prev {
+        left: 10px;
+      }
+
+      .carousel .slick-next {
+        right: 10px;
+      }
+
       /* Terapkan animasi pada setiap item */
     </style>
   </head>
@@ -478,7 +515,7 @@
         </div>
 
         <!-- Carousel container for mobile view -->
-        <div class="md:hidden">
+        <div class="md:hidden carousel-wrapper">
           <div class="carousel">
             <div
               class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded"
@@ -501,7 +538,6 @@
                 produces quality PVC and HDPE.
               </p>
             </div>
-            <!-- Repeat for each item -->
             <div
               class="p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded"
             >
@@ -546,9 +582,9 @@
             </div>
           </div>
         </div>
+
         <!-- Grid container for desktop view -->
         <div id="exp-item" class="grid grid-cols-1 gap-4">
-          <!-- Grid content -->
           <ul class="timeline timeline-vertical">
             <li>
               <div
@@ -604,7 +640,6 @@
                   />
                 </svg>
               </div>
-
               <div
                 class="timeline-end p-5 border border-gray-100 shadow-md mt-3 max-w-lg full-rounded hover:shadow-lg"
               >
@@ -669,8 +704,6 @@
               </div>
             </li>
           </ul>
-
-          <!-- Repeat for each item -->
         </div>
       </section>
 
@@ -1163,12 +1196,21 @@
     window.addEventListener("load", animateOnScroll);
 
     $(".carousel").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      dots: false,
+      dots: true,
       arrows: true,
       infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            dots: true,
+          },
+        },
+      ],
     });
 
     const screenWidth = window.innerWidth;
